@@ -5,6 +5,6 @@ Acheron Prime is developed strictly for educational purposes, authorized securit
 
 -Prohibition: Unauthorized use of this tool against systems without prior written consent is illegal and strictly prohibited.
 
--Responsibility: The author (Your Name/Alias) assumes no liability and is not responsible for any misuse or damage caused by this program. Users are solely responsible for complying with local and international laws.
+-Responsibility: The author Hpperr assumes no liability and is not responsible for any misuse or damage caused by this program. Users are solely responsible for complying with local and international laws.
 
 -Compliance: This tool aligns with the principles of Ethical Hacking and professional Red Teaming operations.
