@@ -8,3 +8,56 @@ Acheron Prime is developed strictly for educational purposes, authorized securit
 -Responsibility: The author Hpperr assumes no liability and is not responsible for any misuse or damage caused by this program. Users are solely responsible for complying with local and international laws.
 
 -Compliance: This tool aligns with the principles of Ethical Hacking and professional Red Teaming operations.
+
+
+
+**Key Features**
+*Layer 2 Obfuscation: Automatic MAC Address spoofing on startup.
+
+*Layer 3 Enforcement: Kernel-level iptables routing (Transparent Proxy).
+
+*Identity Fluidity: High-velocity Tor circuit rotation (NEWNYM signal).
+
+*Traffic Padding: Generates background noise to bypass AI-based behavioral analysis.
+
+*Panic Protocol: One-click emergency shutdown and trace purging.
+
+Installation
+1. Prereq:
+Ensure you are running Kali Linux and have the following tools installed:
+---------------------------sudo apt update && sudo apt install -y tor iptables curl python3-pip-----------------------------------------------------------------
+2. Configure Tor Backbone
+Edit your Tor configuration file to allow control signals:
+---------------------------sudo nano /etc/tor/torrc-------------------------------------------------------------------------------------------------------------
+Append these lines to the end of the file:
+ControlPort 9051
+CookieAuthentication 0
+TransPort 9040
+DNSPort 5353
+And then,restart Tor service:
+-------------------------sudo systemctl restart tor-------------------------------------------------------------------------------------------------------------
+3. Setup Acheron Prime
+Clone the repository and install Python dependencies:
+-------------------------git clone https://github.com/Hpperr/Acheron-Prime.git | cd Acheron-Prime | sudo pip3 install -r requirements.txt ----------------------
+Usage Guide
+Starting the Ghost Protocol
+Run the script with root privileges (required for iptables and MAC manipulation):
+-------------------------sudo python3 acheron_prime.py----------------------------------------------------------------------------------------------------------
+
+Dashboard Overview
+Current IP: Displays your real-time exit node IP.
+Recent IP Pivots: A live log of your identity history.
+Uptime: Tracks the duration of your stealth session.
+*****************************************************************************************************************************************************************
+Emergency Exit
++Press CTRL + C at any time to trigger the Panic Handler. This will:
++Flush all iptables rules.
++Restore default network routing.
++Clear DNS cache.
++Purge all system traces of the tool.
+
+{Author}
+**Hpperr - Cybersecurity Researcher & Red Team Enthusiast**
+   
+
+   
