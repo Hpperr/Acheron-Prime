@@ -25,15 +25,15 @@ Acheron Prime is developed strictly for educational purposes, authorized securit
 Installation
 1. Prereq:
 Ensure you are running Kali Linux and have the following tools installed:
----------------------------sudo apt update && sudo apt install -y tor iptables curl python3-pip-----------------------------------------------------------------
+---------------------------sudo apt update && sudo apt install -y tor iptables curl python3-pip | sudo apt update && sudo apt install -y obfs4proxy-----------------------------------------------------------------
 2. Configure Tor Backbone
 Edit your Tor configuration file to allow control signals:
 ---------------------------sudo nano /etc/tor/torrc-------------------------------------------------------------------------------------------------------------
 Append these lines to the end of the file:
-ControlPort 9051
-CookieAuthentication 0
-TransPort 9040
-DNSPort 5353
+#UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+#Bridge obfs4 38.229.33.83:80 0BAB3FFC63749298495A5B64E30292E4F064C46A cert=V2vDRnS6Xp9Y6S79F7mR9fS9r8fS9S6/p9Y6S79F7mR9fS9r8fS9S6/p9Y6S79 iat-mode=0
+#Bridge obfs4 192.95.36.142:443 CDF2E8525FF362A4AD361CA627F648939746C958 cert=766SreYdAnWv7idA3sh/ZlU9P7vX18C8B5GCH3X7zKInpZ0yv52hILeOIZLid6E7fS9p9g iat-mode=0
 And then,restart Tor service:
 -------------------------sudo systemctl restart tor-------------------------------------------------------------------------------------------------------------
 3. Setup Acheron Prime
