@@ -17,13 +17,13 @@ ROTATION_DELAY = 0.5
 DASHBOARD_REFRESH = 2
 MAX_HISTORY = 8
 
-# --- ANSI COLORS (MÀU SẮC) ---
-G = '\033[92m'  # Green
-R = '\033[91m'  # Red
-Y = '\033[93m'  # Yellow
-B = '\033[94m'  # Blue
-C = '\033[96m'  # Cyan
-W = '\033[0m'   # White
+# --- ANSI COLORS---
+G = '\033[92m' 
+R = '\033[91m'  
+Y = '\033[93m'  
+B = '\033[94m'  
+C = '\033[96m'  
+W = '\033[0m'   
 BOLD = '\033[1m'
 
 class AcheronPrime:
@@ -36,7 +36,7 @@ class AcheronPrime:
         self.start_time = time.time()
 
     def print_banner(self):
-        """Hiển thị Banner bản quyền khi khởi động"""
+        """Banner Author"""
         os.system('clear' if platform.system() != "Windows" else 'cls')
         banner = f"""
 {C}{BOLD}    ___   ______ __  __ ______ ____   ____   _   __
@@ -140,7 +140,7 @@ class AcheronPrime:
             print(f"{R}[!] ERROR: Root privileges required.{W}")
             return
 
-        self.print_banner() # Chạy banner trước
+        self.print_banner() # Start banner
         signal.signal(signal.SIGINT, self.panic_handler)
 
         self.spoof_mac()
