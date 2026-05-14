@@ -42,6 +42,7 @@ Clone the repository and install Python dependencies:
 Usage Guide
 Starting the Ghost Protocol
 Run the script with root privileges (required for iptables and MAC manipulation):
+-------------------------sudo -u debian-tor tor -f /etc/tor/torrc-----------------------------------------------------------------------------------------------
 -------------------------sudo python3 acheron_prime.py----------------------------------------------------------------------------------------------------------
 
 Dashboard Overview
